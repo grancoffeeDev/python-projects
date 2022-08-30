@@ -1,0 +1,10 @@
+teste
+teste.txt
+API/lastid.txt
+API/Server
+API/gcp
+API/getVends/vends
+API/getVends/env
+API/getVends/__pycache__
+API/getVends/lastid*
+API/getVends/*.json
