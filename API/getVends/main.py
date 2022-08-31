@@ -17,24 +17,15 @@ def getVends(cloud_event=None):
     project_id = p.get("project_id")
     bucket = p.get("bucket")
     bucket_folder= p.get("bucket_folder")
-    pubsub_topic_id = p.get("pubsub_topic_id")
-    pubsub_topic_sub = p.get("pubsub_topic_sub")
     id = lastid()
-    #g = gcs()   
-    g = gcs("../../../vmgc-gcs.json") 
-    g.set(project_id,bucket, bucket_folder) # Define dados para salvação no Bucket
-    ps = pubsub("../../../vmgc-pubsub.json")
-    #ps = pubsub()    
-    #ps.set(project_id,pubsub_topic_id)
-    #id_salvo = ps.get(pubsub_topic_sub) 
-    id_salvo=id.getLastBQ()
-    #id.set(id_salvo)
     i=0
     json_result = []
     df_vends =[]
     df_vendsAppend=[]
     df_result=[]
-    idGeted = id.get()
+    #idGeted = id.get()
+    #idGeted = id.getLastBQ("../../../vmgc-bigquery.json")
+    idGeted = id.getLastBQ()
     if idGeted == None:
         raise NameError('Não foi possivel obter o último ID!')
         exit()    
@@ -43,16 +34,9 @@ def getVends(cloud_event=None):
     
     caller = call(api_url,api_token)
     while True:
-        print(i)
         i=i+1
         v=vendas(caller,None,None,lines,last_id,i)
         json_result = v.getVends()
-        
-#        print(json_result)
-        print(caller.parametros)
-        print(caller.url)
-#        exit()
-        
         if json_result==[] or caller.status>300:
             if i>1:
                 i=i-1
@@ -70,12 +54,16 @@ def getVends(cloud_event=None):
         remote_file = str(last_id)+"-"+str(i)
         arquivo = remote_file + ".json"
         # Converte dados JSON em JSONL e envia para o GCS
-        j2l = u.json2jsonl(df_vends) # Conversão de dos dados em JSONL (Formato aceito pelo Google BigQuery)
+        ut=u()
+        j2l = ut.json2jsonl(df_vends) # Conversão de dos dados em JSONL (Formato aceito pelo Google BigQuery)
+        g = gcs() 
+        g.set(project_id,bucket, bucket_folder) # Define dados para salvação no Bucket
+        
         g.upload_blob(j2l,arquivo) # Cria o arquivo Json direto no Cloud Storage
         # Obtem o Ultimo ID de venda obtido nos dados  
-        last_id = u.maxID(df_vends)    
-        l2 = str(last_id) 
+        #last_id = u.maxID(df_vends)    
+        #l2 = str(last_id) 
         # Seta LastID na Fila do Pub/Sub
-        ps.send(int(l2))
+        #ps.send(int(l2))
     return
-getVends()    
+#getVends()    

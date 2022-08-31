@@ -32,10 +32,11 @@ class lastid:
             print("Lendo Conteudo:"+conteudo)
         return conteudo
 
-    def getLastBQ(self):
+    def getLastBQ(self,credencial=None):
         from google.cloud import bigquery
-        #import os
-        #os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="../../../vmgc-bigquery.json"
+        if credencial!=None:
+            import os
+            os.environ["GOOGLE_APPLICATION_CREDENTIALS"]=credencial
         client = bigquery.Client()
         query_job = client.query(
             """
@@ -45,9 +46,7 @@ class lastid:
             """
         )
         results = query_job.result()  # Waits for job to complete.
-
         for row in results:
             lastid=row.lastid  
-
         self.id = lastid 
         return lastid
