@@ -1,4 +1,4 @@
-from pack.vends import vends as vendas
+from pack.getter import vends as vendas
 from pack.rest_call import rest_call as call
 from pack.util import util as u
 from pack.id import lastid as lastid

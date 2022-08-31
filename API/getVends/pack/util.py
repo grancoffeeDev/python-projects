@@ -38,5 +38,21 @@ class util:
         j2l = df.to_json(orient='records', lines=True)
         #print(j2l)
         return j2l
+    
+    def maxID(self,data):
+        df = None
+        df = pd.DataFrame(data)
+        return int(df['id'].max())
+
+    def removeDuplicates(self,data):
+        df = data
+        j = df.drop_duplicates(subset=['id'])
+        return j.to_dict()
+
+    def CountID(self,data):
+        df = None
+        df = pd.DataFrame(data)
+        return int(df['id'].count())
+    
 
 

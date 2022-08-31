@@ -18,6 +18,7 @@ class rest_call:
     def getData(self, modulo, module_parametros):
         url_full = self.url+"/"+modulo
         parametros = util.somaDict(self.parametros,module_parametros)
+        self.parametros = parametros
         global status
         try:
             response = requests.get(url_full,params=parametros)

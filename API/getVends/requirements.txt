@@ -2,6 +2,7 @@ pandas
 requests
 google_cloud_storage
 google_cloud_pubsub
+google-cloud-bigquery
 google.api_core
 functions_framework
 pyarrow

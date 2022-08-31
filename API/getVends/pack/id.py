@@ -31,3 +31,23 @@ class lastid:
             conteudo = str(0)
             print("Lendo Conteudo:"+conteudo)
         return conteudo
+
+    def getLastBQ(self):
+        from google.cloud import bigquery
+        #import os
+        #os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="../../../vmgc-bigquery.json"
+        client = bigquery.Client()
+        query_job = client.query(
+            """
+            SELECT
+            max(id) as lastid
+            FROM `vmgc-e-commerce.verti_raw.vends`
+            """
+        )
+        results = query_job.result()  # Waits for job to complete.
+
+        for row in results:
+            lastid=row.lastid  
+
+        self.id = lastid 
+        return lastid
