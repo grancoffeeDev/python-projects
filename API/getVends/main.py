@@ -29,7 +29,7 @@ def getVends(cloud_event=None):
     if idGeted == None:
         raise NameError('Não foi possivel obter o último ID!')
         exit()    
-    last_id = int(idGeted)+1
+    last_id = int(idGeted)
     lines = 1000
     
     caller = call(api_url,api_token)

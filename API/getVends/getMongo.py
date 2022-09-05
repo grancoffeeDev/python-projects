@@ -1,4 +1,6 @@
 
+from datetime import datetime
+from sqlite3 import Timestamp
 from pymongo import MongoClient
 #from jsonmerge import merge as m
 from bson.json_util import dumps #, loads
@@ -30,19 +32,31 @@ db = client["Verti"]
 # Collection Name
 col = db["vends"]
  
-x = col.find({"id":{"$gte":175859291,"$lte":176043401}})
+#x = col.count_documents({"id":{"$gte":176727019,"$lte":176977737}})
+#x = col.count_documents({"id":{"$gte":175859291}})
+x = col.find({"id":{"$gte":176727019,"$lte":176977737}})
 df_vends ={}
 df_vendsAppend={}
 
 #print (x)
 
-col2list = list(x)
+df = pd.DataFrame(x)
+df=df.drop(columns=['_id'])
+df=df.astype({'dtget':str})
 
-json_data = dumps(col2list)
+#print(df)
+
+j2l = df.to_json(orient='records', lines=True)
+genfile(j2l)
+#print(j2l)
+
+#col2list = list(x)
+
+#json_data = dumps(col2list)
 
 #df = pd.json_normalize(json_data,record_path=".")
 #j2l = df.to_json(orient='records', lines=True)
-genfile(json_data)
+#genfile(json_data)
 
 
 
