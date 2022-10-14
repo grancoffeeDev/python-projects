@@ -8,3 +8,9 @@ API/getVends/env
 API/getVends/__pycache__
 API/getVends/lastid*
 API/getVends/*.json
+API/__pycache__
+API/pack/__pycache__
+API/*.parquet
+*.xml
+API/getVends/pack/__pycache__
+leitura_xml
