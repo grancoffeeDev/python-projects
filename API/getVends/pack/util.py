@@ -7,8 +7,9 @@ class util:
         pass
 
     def somaDict(dict1,dict2):
-        for i in (dict2):
-            dict1[i]=dict2[i]
+        dict1.update(dict2)
+        #for i in (dict2):
+        #    dict1[i]=dict2[i]
         return dict1
     
     def createLocalJsonFile(self,json_text,filename):

@@ -34,7 +34,8 @@ col = db["vends"]
  
 #x = col.count_documents({"id":{"$gte":176727019,"$lte":176977737}})
 #x = col.count_documents({"id":{"$gte":175859291}})
-x = col.find({"id":{"$gte":176727019,"$lte":176977737}})
+#x = col.find({"id":{"$gte":176727019,"$lte":176977737}})
+x = col.find({"occurred_at":{"$gte":'2022-10-01',"$lte":'2022-10-10'}})
 df_vends ={}
 df_vendsAppend={}
 
