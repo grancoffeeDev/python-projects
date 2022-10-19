@@ -13,3 +13,4 @@ API/*.parquet
 *.xml
 API/getVends/pack/__pycache__
 leitura_xml
+.gitignore
