@@ -1,0 +1,176 @@
+[
+  {
+    "name": "location",
+    "mode": "NULLABLE",
+    "type": "RECORD",
+    "fields": [
+      {
+        "name": "name",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "fields": []
+      },
+      {
+        "name": "client_id",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "fields": []
+      }
+    ]
+  },
+  {
+    "name": "client",
+    "mode": "NULLABLE",
+    "type": "RECORD",
+    "fields": [
+      {
+        "name": "name",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "fields": []
+      }
+    ]
+  },
+  {
+    "name": "good",
+    "mode": "NULLABLE",
+    "type": "RECORD",
+    "fields": [
+      {
+        "name": "barcode",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "fields": []
+      },
+      {
+        "name": "name",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "fields": []
+      },
+      {
+        "name": "category_id",
+        "mode": "NULLABLE",
+        "type": "INTEGER",
+        "fields": []
+      },
+      {
+        "name": "upc_code",
+        "mode": "NULLABLE",
+        "type": "INTEGER",
+        "fields": []
+      },
+      {
+        "name": "manufacturer_id",
+        "mode": "NULLABLE",
+        "type": "INTEGER",
+        "fields": []
+      },
+      {
+        "name": "type",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "fields": []
+      }
+    ]
+  },
+  {
+    "name": "id",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "fields": []
+  },
+  {
+    "name": "coil",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "fields": []
+  },
+  {
+    "name": "installation_id",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "fields": []
+  },
+  {
+    "name": "machine",
+    "mode": "NULLABLE",
+    "type": "RECORD",
+    "fields": [
+      {
+        "name": "asset_number",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "fields": []
+      },
+      {
+        "name": "machine_model_id",
+        "mode": "NULLABLE",
+        "type": "INTEGER",
+        "fields": []
+      }
+    ]
+  },
+  {
+    "name": "occurred_at",
+    "mode": "NULLABLE",
+    "type": "TIMESTAMP",
+    "description": "bq-datetime",
+    "fields": []
+  },
+  {
+    "name": "client_id",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "fields": []
+  },
+  {
+    "name": "value",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "fields": []
+  },
+  {
+    "name": "quantity",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "fields": []
+  },
+  {
+    "name": "machine_id",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "fields": []
+  },
+  {
+    "name": "good_id",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "fields": []
+  },
+  {
+    "name": "audit_id",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "fields": []
+  },
+  {
+    "name": "location_id",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "fields": []
+  },
+  {
+    "name": "planogram_item_id",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "fields": []
+  }
+  {
+    "name": "dt_get",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "fields": []
+  }
+]  
+]

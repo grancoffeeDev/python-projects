@@ -4,10 +4,9 @@ API/lastid.txt
 API/Server
 API/gcp
 API/getVends/vends
-API/getVends/env
+./API/getVends/env
 API/getVends/__pycache__
 API/getVends/lastid*
-API/getVends/*.json
 API/__pycache__
 API/pack/__pycache__
 API/*.parquet
