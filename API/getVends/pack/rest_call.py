@@ -21,7 +21,7 @@ class rest_call:
             self.parametros.update(module_parametros)
         parametros=self.parametros
         global status
-        print (parametros)
+        # print (parametros)
         try:
             response = requests.get(url_full,params=parametros)
         except requests.exceptions.RequestException as e:

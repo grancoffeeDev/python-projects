@@ -9,7 +9,11 @@ class parametros:
 
     def getAll(self):
         a = self.lerArquivo()
-        print (a)    
+        p={}
+        for key, value in a.items():
+            p[key]=value
+        return p    
+            
     
     def lerArquivo(self):
         conteudo = ""
@@ -28,4 +32,8 @@ class parametros:
         except:
             retorno = "Parametro não encontrado:"+parametro 
         return retorno
+
+#p = parametros("parametros.json")
+#par = p.getAll()
+#print(par['api_url'])
             
