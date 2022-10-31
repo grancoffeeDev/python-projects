@@ -1,6 +1,6 @@
 import json
 import pandas as pd
-import datetime
+from datetime import datetime, timezone
 
 class util:
     def __init__(self) -> None:
@@ -34,11 +34,33 @@ class util:
 
     def json2jsonl(self,json_text):
         df = pd.DataFrame(json_text)
-        dtget = datetime.datetime.now()
+#        dtget = datetime.datetime.now()
+        dtget = datetime.now(timezone.utc).isoformat()
         df['dt_get'] = dtget
         j2l = df.to_json(orient='records', lines=True)
         #print(j2l)
         return j2l
+    
+    def json2jsonl(self,json_text,filename):
+        df = None
+        df = pd.DataFrame(json_text)
+#        dtget = datetime.datetime.now()
+        dtget = datetime.now(timezone.utc).isoformat()
+        df['dt_get'] = dtget
+        df['filename'] = filename
+        j2l = df.to_json(orient='records', lines=True)
+        #print(j2l)
+        return j2l
+    
+    def jsonnormalize(self,json_text,filename):
+        df = None
+        df = pd.DataFrame(json_text)
+        dtget = datetime.now(timezone.utc).isoformat()
+        df['dt_get'] = dtget
+        df['filename'] = filename
+        j2n = df.to_json(orient='records', lines=False)
+        #print(j2l)
+        return j2n
     
     def maxID(self,data):
         df = None

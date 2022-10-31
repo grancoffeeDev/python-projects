@@ -6,7 +6,7 @@
     "api_parametros":{"vend_id_greater_than":0},
     "project_id": "vmgc-e-commerce",
     "bucket": "gc_rawdata",
-    "bucket_folder": "telemetria/verti/vends/",
+    "bucket_folder": "telemetria/verti/vends/raw/",
     "getlastid": true,
     "query_id":"SELECT max(id) as lastid FROM `vmgc-e-commerce.verti_raw.vends`"
 }

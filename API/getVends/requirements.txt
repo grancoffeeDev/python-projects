@@ -8,3 +8,4 @@ functions_framework
 pyarrow
 fastparquet
 jsonmerge
+datetime
