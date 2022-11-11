@@ -1,0 +1,12 @@
+{
+    "api_url": "https://vmpay.vertitecnologia.com.br/api/v1",
+    "api_token": "DQfDYxCRstr7Ti2KSu5VouW3JzLqtuNZpMXNNvm8",
+    "api_module":"vends",
+    "api_lines":1000,
+    "api_parametros":{"vend_id_greater_than":0},
+    "project_id": "vmgc-e-commerce",
+    "bucket": "gc_rawdata",
+    "bucket_folder": "telemetria/verti/vends/raw/",
+    "getlastid": true,
+    "query_id":"SELECT max(id) as lastid FROM `vmgc-e-commerce.verti_raw.vends`"
+}
